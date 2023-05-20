@@ -52,7 +52,7 @@ public class TelegramBotUpdatesListenerTest {
         Mockito.verify(telegramBot).execute(argumentCaptor.capture());
         SendMessage actual = argumentCaptor.getValue();
 
-        Assertions.assertEquals(actual.getParameters().get("chat_id"),update.message().chat().id());
-        Assertions.assertEquals(actual.getParameters().get("text"),"Привет! Я могу планировать твои задачи! Отправь мне ее в формате: 00.00.0000 00:00 Сдать домашку");
+        Assertions.assertEquals(actual.getParameters().get("chat_id"), update.message().chat().id());
+        Assertions.assertEquals(actual.getParameters().get("text"), "Привет! Я могу планировать твои задачи! Отправь мне ее в формате: 00.00.0000 00:00 Сдать домашку");
     }
 }

@@ -22,7 +22,7 @@ public class NotificationTaskTimer {
     }
 
     @Scheduled(fixedDelay = 1, timeUnit = TimeUnit.MINUTES)
-    public void task(){
+    public void task() {
         notificationTaskRepository.findAllByNotificationDateTime(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))
                 .forEach(notificationTask -> {
                     telegramBot.execute(
